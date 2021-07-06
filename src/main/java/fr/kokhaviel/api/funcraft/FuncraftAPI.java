@@ -17,6 +17,7 @@
 package fr.kokhaviel.api.funcraft;
 
 import fr.kokhaviel.api.funcraft.games.*;
+import fr.kokhaviel.api.funcraft.player.Player;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -106,7 +107,15 @@ public class FuncraftAPI {
 	}
 
 
-
+	public Player getPlayerStats(String player) throws IOException {
+		return new Player(this.get("Kokhaviel")
+				.selectFirst("html")
+				.selectFirst("body")
+				.getElementById("main-layout")
+				.getElementsByClass("container player-banner-margin-top").first()
+				.getElementsByClass("box").first()
+				.getElementsByClass("player-banner clearfix").first());
+	}
 
 	private Document get(String player) throws IOException {
 		String baseUrl = "https://www.funcraft.net/fr/joueurs?q=";
