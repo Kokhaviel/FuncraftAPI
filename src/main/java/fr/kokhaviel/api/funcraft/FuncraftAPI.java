@@ -19,6 +19,7 @@ package fr.kokhaviel.api.funcraft;
 import fr.kokhaviel.api.funcraft.games.Hikabrain;
 import fr.kokhaviel.api.funcraft.games.RushMDT;
 import fr.kokhaviel.api.funcraft.games.RushRetro;
+import fr.kokhaviel.api.funcraft.games.Skywars;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -49,6 +50,13 @@ public class FuncraftAPI {
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(2));
+	}
+
+	public Skywars getSkywarsStats(String player) throws IOException {
+		return new Skywars(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(3));
 	}
 
 
