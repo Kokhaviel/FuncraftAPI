@@ -84,6 +84,13 @@ public class FuncraftAPI {
 				.get(7));
 	}
 
+	public Blitz getBlitzStats(String player) throws IOException {
+		return new Blitz(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(8));
+	}
+
 
 
 
