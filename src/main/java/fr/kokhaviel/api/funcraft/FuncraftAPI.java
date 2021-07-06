@@ -91,6 +91,13 @@ public class FuncraftAPI {
 				.get(8));
 	}
 
+	public PvpSmash getPvpSmashStats(String player) throws IOException {
+		return new PvpSmash(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(9));
+	}
+
 
 
 
