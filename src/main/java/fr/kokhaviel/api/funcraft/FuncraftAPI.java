@@ -77,6 +77,16 @@ public class FuncraftAPI {
 				.get(6));
 	}
 
+	public Survival getSurvivalStats(String player) throws IOException {
+		return new Survival(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(7));
+	}
+
+
+
+
 	private Document get(String player) throws IOException {
 		String baseUrl = "https://www.funcraft.net/fr/joueurs?q=";
 		String url = baseUrl + player;
