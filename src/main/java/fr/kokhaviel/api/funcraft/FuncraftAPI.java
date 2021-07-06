@@ -57,12 +57,18 @@ public class FuncraftAPI {
 	}
 
 	public Octogone getOctogoneStats(String player) throws IOException {
-			return new Octogone(this.getStats(player)
-					.getElementsByClass("row")
-					.get(2).getElementsByClass("col-md-4 col-sm-6")
-					.get(4));
-		}
+		return new Octogone(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(4));
+	}
 
+	public ShootCraft getShootCraftStats(String player) throws IOException {
+		return new ShootCraft(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(5));
+	}
 
 	private Document get(String player) throws IOException {
 		String baseUrl = "https://www.funcraft.net/fr/joueurs?q=";
