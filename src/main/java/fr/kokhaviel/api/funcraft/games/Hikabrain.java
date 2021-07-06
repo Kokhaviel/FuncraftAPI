@@ -26,11 +26,29 @@ public class Hikabrain extends Game {
 
 		this.setGameName(playerStats.getElementsByClass("name game-border-hikabrain").first().text());
 		setStats(playerStatsInfo);
+	}
 
-		final Element victoriesElement = playerStatsInfo.getElementsByClass("stats-entry").get(3);
-		final Element defeatsElement = playerStatsInfo.getElementsByClass("stats-entry").get(4);
+	@Override
+	public void setStats(Element playerStatsElement) {
+		final Element leaderBoardElement = playerStatsElement.getElementsByClass("stats-entry").get(0);
+		final Element pointsElement = playerStatsElement.getElementsByClass("stats-entry").get(1);
+		final Element gamesElement = playerStatsElement.getElementsByClass("stats-entry").get(2);
+		final Element victoriesElement = playerStatsElement.getElementsByClass("stats-entry").get(3);
+		final Element defeatsElement = playerStatsElement.getElementsByClass("stats-entry").get(4);
+		final Element playedTimeElement = playerStatsElement.getElementsByClass("stats-entry").get(5);
+		final Element killsElement = playerStatsElement.getElementsByClass("stats-entry").get(6);
+		final Element deathsElement = playerStatsElement.getElementsByClass("stats-entry").get(7);
 
-
+		this.setLeaderBoard(replaceDashByZero(
+				leaderBoardElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setLeaderBoardLastMonth(replaceDashByZero(
+				leaderBoardElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setPoints(replaceDashByZero(
+				pointsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setPointsLastMonth(replaceDashByZero(
+				pointsElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
 		this.setVictories(replaceDashByZero(
 				victoriesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
 		this.setVictoriesLastMonth(replaceDashByZero(
@@ -40,6 +58,26 @@ public class Hikabrain extends Game {
 				defeatsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
 		this.setDefeatsLastMonth(replaceDashByZero(
 				defeatsElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setGames(replaceDashByZero(
+				gamesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setGamesLastMonth(replaceDashByZero(
+				gamesElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setPlayedTime(replaceDashByZero(
+				playedTimeElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setPlayedTimeLastMonth(replaceDashByZero(
+				playedTimeElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setKills(replaceDashByZero(
+				killsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setKillsLastMonth(replaceDashByZero(
+				killsElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setDeaths(replaceDashByZero(
+				deathsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setDeathsLastMonth(replaceDashByZero(
+				deathsElement.getElementsByClass("stats-value stats-value-monthly").first()
 						.getElementsByClass("player-stats-periodval").first().text()));
 	}
 }
