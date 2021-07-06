@@ -26,5 +26,26 @@ public class RushRetro extends Game {
 
 		this.setGameName(playerStats.getElementsByClass("name game-border-rushretro").first().text());
 		setStats(playerStatsInfo);
+
+
+		final Element victoriesElement = playerStatsInfo.getElementsByClass("stats-entry").get(3);
+		final Element defeatsElement = playerStatsInfo.getElementsByClass("stats-entry").get(4);
+		final Element bedsDestroyElement = playerStatsInfo.getElementsByClass("stats-entry").get(8);
+
+		this.setVictories(replaceDashByZero(
+				victoriesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setVictoriesLastMonth(replaceDashByZero(
+				victoriesElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setDefeats(replaceDashByZero(
+				defeatsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setDefeatsLastMonth(replaceDashByZero(
+				defeatsElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
+		this.setBedsDestroy(replaceDashByZero(
+				bedsDestroyElement.getElementsByClass("stats-value stats-value-daily").first().text()));
+		this.setBedsDestroyLastMonth(replaceDashByZero(
+				bedsDestroyElement.getElementsByClass("stats-value stats-value-monthly").first()
+						.getElementsByClass("player-stats-periodval").first().text()));
 	}
 }

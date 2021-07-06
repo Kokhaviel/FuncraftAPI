@@ -18,18 +18,18 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
-public class RushMDT extends Game {
+public class Hikabrain extends Game {
 
-	public RushMDT(Element rushMDTElement) {
-		final Element playerStats = rushMDTElement.getElementsByClass("player-stats-game").first();
-		final Element playerStatsInfo = playerStats.getElementsByClass("player-stats-info").get(0);
-		this.setGameName(playerStats.getElementsByClass("name game-border-rush").first().text());
+	public Hikabrain(Element hikabrainElement) {
+		final Element playerStats = hikabrainElement.getElementsByClass("player-stats-game").first();
+		final Element playerStatsInfo = playerStats.getElementsByClass("player-stats-info").first();
+
+		this.setGameName(playerStats.getElementsByClass("name game-border-hikabrain").first().text());
 		setStats(playerStatsInfo);
-
 
 		final Element victoriesElement = playerStatsInfo.getElementsByClass("stats-entry").get(3);
 		final Element defeatsElement = playerStatsInfo.getElementsByClass("stats-entry").get(4);
-		final Element bedsDestroyElement = playerStatsInfo.getElementsByClass("stats-entry").get(8);
+
 
 		this.setVictories(replaceDashByZero(
 				victoriesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
@@ -41,11 +41,5 @@ public class RushMDT extends Game {
 		this.setDefeatsLastMonth(replaceDashByZero(
 				defeatsElement.getElementsByClass("stats-value stats-value-monthly").first()
 						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setBedsDestroy(replaceDashByZero(
-				bedsDestroyElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setBedsDestroyLastMonth(replaceDashByZero(
-				bedsDestroyElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
 	}
-
 }

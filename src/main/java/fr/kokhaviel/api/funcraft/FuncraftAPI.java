@@ -16,6 +16,7 @@
 
 package fr.kokhaviel.api.funcraft;
 
+import fr.kokhaviel.api.funcraft.games.Hikabrain;
 import fr.kokhaviel.api.funcraft.games.RushMDT;
 import fr.kokhaviel.api.funcraft.games.RushRetro;
 import org.jsoup.Jsoup;
@@ -41,6 +42,13 @@ public class FuncraftAPI {
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(1));
+	}
+
+	public Hikabrain getHikabrainStats(String player) throws IOException {
+		return new Hikabrain(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(2));
 	}
 
 
