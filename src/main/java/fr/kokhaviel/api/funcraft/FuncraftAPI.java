@@ -16,6 +16,7 @@
 
 package fr.kokhaviel.api.funcraft;
 
+import fr.kokhaviel.api.funcraft.games.RushMDT;
 import fr.kokhaviel.api.funcraft.games.RushRetro;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -33,6 +34,13 @@ public class FuncraftAPI {
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.first());
+	}
+
+	public RushMDT getRushMDTStats(String player) throws IOException {
+		return new RushMDT(this.getStats(player)
+				.getElementsByClass("row")
+				.get(2).getElementsByClass("col-md-4 col-sm-6")
+				.get(1));
 	}
 
 

@@ -18,13 +18,13 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
-public class RushRetro extends Game {
+public class RushMDT extends Game {
 
-	public RushRetro(Element rushRetroElement) {
-		final Element playerStats = rushRetroElement.getElementsByClass("player-stats-game").first();
-		final Element playerStatsInfo = playerStats.getElementsByClass("player-stats-info").first();
-
-		this.setGameName(playerStats.getElementsByClass("name game-border-rushretro").first().text());
+	public RushMDT(Element rushMDTElement) {
+		final Element playerStats = rushMDTElement.getElementsByClass("player-stats-game").first();
+		final Element playerStatsInfo = playerStats.getElementsByClass("player-stats-info").get(0);
+		this.setGameName(playerStats.getElementsByClass("name game-border-rush").first().text());
 		setStats(playerStatsInfo);
 	}
+
 }
