@@ -136,13 +136,3 @@ public class FuncraftAPI {
 
 
 }
-
-
-//TODO : INSCRIPTION, LAST CONNECTION, HEAD, GLORIES, PLAYED PARTY, RANK :
-//
-//new FuncraftAPI().get("Kokhaviel")
-//				.selectFirst("html")
-//				.selectFirst("body")
-//				.getElementById("main-layout")
-//				.getElementsByClass("container player-banner-margin-top").first()
-//				.getElementsByClass("box").first();
