@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Skywars Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Skywars extends Game {
 
 	public Skywars(Element skywarsElement) {

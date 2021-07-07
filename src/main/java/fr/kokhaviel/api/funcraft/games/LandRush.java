@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Land Rush Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class LandRush extends Game {
 
 	public LandRush(Element landRushElement) {

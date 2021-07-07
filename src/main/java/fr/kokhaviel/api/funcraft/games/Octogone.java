@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Octogone Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Octogone extends Game {
 
 	public Octogone(Element octogoneElement) {

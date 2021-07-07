@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Blitz Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Blitz extends Game {
 
 	public Blitz(Element blitzElement) {

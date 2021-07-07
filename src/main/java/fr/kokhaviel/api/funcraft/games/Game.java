@@ -26,6 +26,9 @@ public class Game {
 		this.gameName = name;
 	}
 
+	/**
+	 * Get Game Name
+	 */
 	public String getGameName() {
 		return gameName;
 	}
@@ -92,50 +95,87 @@ public class Game {
 		this.nexusDamage = nexusDamage;
 	}
 
+
+	/**
+	 * Get Leaderboard Points
+	 */
 	public String getLeaderBoard() {
 		return leaderBoard;
 	}
 
+	/**
+	 * Get Game Points
+	 */
 	public String getPoints() {
 		return points;
 	}
 
+	/**
+	 * Get Games Played
+	 */
 	public String getGames() {
 		return games;
 	}
 
+	/**
+	 * Get Total Victories
+	 */
 	public String getVictories() {
 		return victories;
 	}
 
+	/**
+	 * Get Total Defeats
+	 */
 	public String getDefeats() {
 		return defeats;
 	}
 
+	/**
+	 * Get Game Played Time
+	 */
 	public String getPlayedTime() {
 		return playedTime;
 	}
 
+	/**
+	 * Get Total Kills
+	 */
 	public String getKills() {
 		return kills;
 	}
 
+	/**
+	 * Get Total Deaths
+	 */
 	public String getDeaths() {
 		return deaths;
 	}
 
+	/**
+	 * Get Total Beds Destroyed
+	 */
 	public String getBedsDestroy() {
 		return bedsDestroy;
 	}
 
+	/**
+	 * Get Total Top 1
+	 */
 	public String getTop1() {
 		return top1;
 	}
 
+	/**
+	 * Get Total Damage Dealt
+	 */
 	public String getDamage() {
 		return damage;
 	}
 
+	/**
+	 * Get Total Nexus Damage Dealt
+	 */
 	public String getNexusDamage() {
 		return nexusDamage;
 	}
@@ -202,50 +242,87 @@ public class Game {
 		this.nexusDamageLastMonth = nexusDamageLastMonth;
 	}
 
+	/**
+	 * Get Last Month Leaderboard Point
+	 */
 	public String getLeaderBoardLastMonth() {
 		return leaderBoardLastMonth;
 	}
 
+	/**
+	 * Get Last Month Points
+	 */
 	public String getPointsLastMonth() {
 		return pointsLastMonth;
 	}
 
+	/**
+	 * Get Last Month Games Played
+	 */
 	public String getGamesLastMonth() {
 		return gamesLastMonth;
 	}
 
+	/**
+	 * Get Last Month Victories
+	 */
 	public String getVictoriesLastMonth() {
 		return victoriesLastMonth;
 	}
 
+
+	/**
+	 * Get Last Month Defeats
+	 */
 	public String getDefeatsLastMonth() {
 		return defeatsLastMonth;
 	}
 
+	/**
+	 * Get Last Month Played Time
+	 */
 	public String getPlayedTimeLastMonth() {
 		return playedTimeLastMonth;
 	}
 
+	/**
+	 * Get Last Month Kills
+	 */
 	public String getKillsLastMonth() {
 		return killsLastMonth;
 	}
 
+	/**
+	 * Get Last Month Deaths
+	 */
 	public String getDeathsLastMonth() {
 		return deathsLastMonth;
 	}
 
+	/**
+	 * Get Last Month Beds Destroyed
+	 */
 	public String getBedsDestroyLastMonth() {
 		return bedsDestroyLastMonth;
 	}
 
+	/**
+	 * Get Last Month Top 1
+	 */
 	public String getTop1LastMonth() {
 		return top1LastMonth;
 	}
 
+	/**
+	 * Get Last Month Damage Dealt
+	 */
 	public String getDamageLastMonth() {
 		return damageLastMonth;
 	}
 
+	/**
+	 * Get Last Month Nexus Damage Dealt
+	 */
 	public String getNexusDamageLastMonth() {
 		return nexusDamageLastMonth;
 	}
@@ -311,7 +388,9 @@ public class Game {
 						.getElementsByClass("player-stats-periodval").first().text()));
 	}
 
-
+	/**
+	 * Replace "-" by "0" in Stats
+	 */
 	public static String replaceDashByZero(String sToReplace) {
 		if(sToReplace.equals("-")) {
 			return "0";

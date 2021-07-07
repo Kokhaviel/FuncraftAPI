@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.player;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Player Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Player {
 
 	final String headUrl;
@@ -52,30 +57,51 @@ public class Player {
 
 	}
 
+	/**
+	 * Get Player Head Image Url
+	 */
 	public String getHeadUrl() {
 		return headUrl;
 	}
 
+	/**
+	 * Get Player In-Game Rank
+	 */
 	public String getRank() {
 		return rank;
 	}
 
+	/**
+	 * Get Player Username
+	 */
 	public String getUsername() {
 		return username;
 	}
 
+	/**
+	 * Get Inscription Date
+	 */
 	public String getInscription() {
 		return inscription;
 	}
 
+	/**
+	 * Get Last Connection Date
+	 */
 	public String getLastConnection() {
 		return lastConnection;
 	}
 
+	/**
+	 * Get Total Player Glories
+	 */
 	public String getGlories() {
 		return glories;
 	}
 
+	/**
+	 * Get Total Games Played by the Player
+	 */
 	public String getGamesPlayed() {
 		return gamesPlayed;
 	}

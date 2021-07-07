@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Hikabrain Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Hikabrain extends Game {
 
 	public Hikabrain(Element hikabrainElement) {

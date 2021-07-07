@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft ShootCraft Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class ShootCraft extends Game {
 
 	public ShootCraft(Element shootCraftStats) {

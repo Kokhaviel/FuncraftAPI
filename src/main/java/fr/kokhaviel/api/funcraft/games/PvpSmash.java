@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft PvpSmash Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class PvpSmash extends Game {
 
 	public PvpSmash(Element pvpSmashElement) {

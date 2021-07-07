@@ -18,6 +18,11 @@ package fr.kokhaviel.api.funcraft.games;
 
 import org.jsoup.nodes.Element;
 
+/**
+ * Funcraft Survival Statistics
+ * @author Kokhaviel
+ * @since 1.0
+ */
 public class Survival extends Game {
 
 	public Survival(Element survivalElement) {
