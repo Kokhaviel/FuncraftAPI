@@ -20,75 +20,170 @@ import org.jsoup.nodes.Element;
 
 /**
  * Funcraft Blitz Statistics
+ *
  * @author Kokhaviel
  * @since 1.0
  */
 public class Blitz extends Game {
+	final Element playerStats;
+
+	final Element leaderBoardElement;
+	final Element pointsElement;
+	final Element gamesElement;
+	final Element victoriesElement;
+	final Element defeatsElement;
+	final Element playedTimeElement;
+	final Element killsElement;
+	final Element deathsElement;
+	final Element nexusDamageElement;
+
 
 	public Blitz(Element blitzElement) {
-		final Element playerStats = blitzElement.getElementsByClass("player-stats-game").first();
+		this.playerStats = blitzElement.getElementsByClass("player-stats-game").first();
 		final Element playerStatsInfo = playerStats.getElementsByClass("player-stats-info").first();
 
-		this.setGameName(playerStats.getElementsByClass("name game-border-blitz").first().text());
-		setStats(playerStatsInfo);
+		leaderBoardElement = playerStatsInfo.getElementsByClass("stats-entry").get(0);
+		pointsElement = playerStatsInfo.getElementsByClass("stats-entry").get(1);
+		gamesElement = playerStatsInfo.getElementsByClass("stats-entry").get(2);
+		victoriesElement = playerStatsInfo.getElementsByClass("stats-entry").get(3);
+		defeatsElement = playerStatsInfo.getElementsByClass("stats-entry").get(4);
+		playedTimeElement = playerStatsInfo.getElementsByClass("stats-entry").get(5);
+		killsElement = playerStatsInfo.getElementsByClass("stats-entry").get(6);
+		deathsElement = playerStatsInfo.getElementsByClass("stats-entry").get(7);
+		nexusDamageElement = playerStatsInfo.getElementsByClass("stats-entry").get(8);
 	}
 
 	@Override
-	public void setStats(Element playerStatsElement) {
-		final Element leaderBoardElement = playerStatsElement.getElementsByClass("stats-entry").get(0);
-		final Element pointsElement = playerStatsElement.getElementsByClass("stats-entry").get(1);
-		final Element gamesElement = playerStatsElement.getElementsByClass("stats-entry").get(2);
-		final Element victoriesElement = playerStatsElement.getElementsByClass("stats-entry").get(3);
-		final Element defeatsElement = playerStatsElement.getElementsByClass("stats-entry").get(4);
-		final Element playedTimeElement = playerStatsElement.getElementsByClass("stats-entry").get(5);
-		final Element killsElement = playerStatsElement.getElementsByClass("stats-entry").get(6);
-		final Element deathsElement = playerStatsElement.getElementsByClass("stats-entry").get(7);
-		final Element nexusDamageElement = playerStatsElement.getElementsByClass("stats-entry").get(8);
+	public String getGameName() {
+		return playerStats.getElementsByClass("name game-border-blitz").first().text();
+	}
 
-		this.setLeaderBoard(replaceDashByZero(
-				leaderBoardElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setLeaderBoardLastMonth(replaceDashByZero(
-				leaderBoardElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setPoints(replaceDashByZero(
-				pointsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setPointsLastMonth(replaceDashByZero(
-				pointsElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setVictories(replaceDashByZero(
-				victoriesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setVictoriesLastMonth(replaceDashByZero(
-				victoriesElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setDefeats(replaceDashByZero(
-				defeatsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setDefeatsLastMonth(replaceDashByZero(
-				defeatsElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setGames(replaceDashByZero(
-				gamesElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setGamesLastMonth(replaceDashByZero(
-				gamesElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setPlayedTime(replaceDashByZero(
-				playedTimeElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setPlayedTimeLastMonth(replaceDashByZero(
-				playedTimeElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setKills(replaceDashByZero(
-				killsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setKillsLastMonth(replaceDashByZero(
-				killsElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setDeaths(replaceDashByZero(
-				deathsElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setDeathsLastMonth(replaceDashByZero(
-				deathsElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
-		this.setNexusDamage(replaceDashByZero(
-				nexusDamageElement.getElementsByClass("stats-value stats-value-daily").first().text()));
-		this.setNexusDamageLastMonth(replaceDashByZero(
-				nexusDamageElement.getElementsByClass("stats-value stats-value-monthly").first()
-						.getElementsByClass("player-stats-periodval").first().text()));
+	@Override
+	public String getLeaderBoard() {
+		return leaderBoardElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getPoints() {
+		return pointsElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getGames() {
+		return gamesElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getVictories() {
+		return victoriesElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getDefeats() {
+		return defeatsElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getPlayedTime() {
+		return playedTimeElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getKills() {
+		return killsElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getDeaths() {
+		return deathsElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getBedsDestroy() {
+		return "null";
+	}
+
+	@Override
+	public String getTop1() {
+		return "null";
+	}
+
+	@Override
+	public String getDamage() {
+		return "null";
+	}
+
+	@Override
+	public String getNexusDamage() {
+		return nexusDamageElement.getElementsByClass("stats-value stats-value-daily").first().text();
+	}
+
+	@Override
+	public String getLeaderBoardLastMonth() {
+		return leaderBoardElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getPointsLastMonth() {
+		return pointsElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getGamesLastMonth() {
+		return gamesElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getVictoriesLastMonth() {
+		return victoriesElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getDefeatsLastMonth() {
+		return defeatsElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getPlayedTimeLastMonth() {
+		return playedTimeElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getKillsLastMonth() {
+		return killsElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getDeathsLastMonth() {
+		return deathsElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
+	}
+
+	@Override
+	public String getBedsDestroyLastMonth() {
+		return "null";
+	}
+
+	@Override
+	public String getTop1LastMonth() {
+		return "null";
+	}
+
+	@Override
+	public String getDamageLastMonth() {
+		return "null";
+	}
+
+	@Override
+	public String getNexusDamageLastMonth() {
+		return nexusDamageElement.getElementsByClass("stats-value stats-value-monthly").first()
+				.getElementsByClass("player-stats-periodval").first().text();
 	}
 }
