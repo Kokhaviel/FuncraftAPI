@@ -172,7 +172,7 @@ public class FuncraftAPI {
 	 * @return Player Statistics
 	 */
 	public Player getPlayerStats(String player) throws IOException {
-		return new Player(this.get("Kokhaviel")
+		return new Player(this.get(player)
 				.selectFirst("html")
 				.selectFirst("body")
 				.getElementById("main-layout")
