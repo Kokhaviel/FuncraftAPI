@@ -31,16 +31,13 @@ import java.io.IOException;
  */
 public class FuncraftAPI {
 
-	public FuncraftAPI() {
-	}
-
 	/**
 	 * Get {@link RushRetro} Stats of a Player
 	 * @param player username
 	 * @return Rush Retro Statistics
 	 */
-	public RushRetro getRushRetroStats(String player) throws IOException {
-		return new RushRetro(this.getStats(player)
+	public static RushRetro getRushRetroStats(String player) throws IOException {
+		return new RushRetro(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.first());
@@ -51,8 +48,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Rush MDT Statistics
 	 */
-	public RushMDT getRushMDTStats(String player) throws IOException {
-		return new RushMDT(this.getStats(player)
+	public static RushMDT getRushMDTStats(String player) throws IOException {
+		return new RushMDT(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(1));
@@ -63,8 +60,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Hikabrain Statistics
 	 */
-	public Hikabrain getHikabrainStats(String player) throws IOException {
-		return new Hikabrain(this.getStats(player)
+	public static Hikabrain getHikabrainStats(String player) throws IOException {
+		return new Hikabrain(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(2));
@@ -75,8 +72,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Skywars Statistics
 	 */
-	public Skywars getSkywarsStats(String player) throws IOException {
-		return new Skywars(this.getStats(player)
+	public static Skywars getSkywarsStats(String player) throws IOException {
+		return new Skywars(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(3));
@@ -87,8 +84,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Octogone Statistics
 	 */
-	public Octogone getOctogoneStats(String player) throws IOException {
-		return new Octogone(this.getStats(player)
+	public static Octogone getOctogoneStats(String player) throws IOException {
+		return new Octogone(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(4));
@@ -99,8 +96,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Shootcraft Statistics
 	 */
-	public ShootCraft getShootCraftStats(String player) throws IOException {
-		return new ShootCraft(this.getStats(player)
+	public static ShootCraft getShootCraftStats(String player) throws IOException {
+		return new ShootCraft(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(5));
@@ -111,8 +108,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Infected Statistics
 	 */
-	public Infected getInfectedStats(String player) throws IOException {
-		return new Infected(this.getStats(player)
+	public static Infected getInfectedStats(String player) throws IOException {
+		return new Infected(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(6));
@@ -123,8 +120,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Survival Statistics
 	 */
-	public Survival getSurvivalStats(String player) throws IOException {
-		return new Survival(this.getStats(player)
+	public static Survival getSurvivalStats(String player) throws IOException {
+		return new Survival(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(7));
@@ -135,8 +132,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Blitz Statistics
 	 */
-	public Blitz getBlitzStats(String player) throws IOException {
-		return new Blitz(this.getStats(player)
+	public static Blitz getBlitzStats(String player) throws IOException {
+		return new Blitz(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(8));
@@ -147,8 +144,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return PvpSmash Statistics
 	 */
-	public PvpSmash getPvpSmashStats(String player) throws IOException {
-		return new PvpSmash(this.getStats(player)
+	public static PvpSmash getPvpSmashStats(String player) throws IOException {
+		return new PvpSmash(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(9));
@@ -159,8 +156,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return LandRush Statistics
 	 */
-	public LandRush getLandRushStats(String player) throws IOException {
-		return new LandRush(this.getStats(player)
+	public static LandRush getLandRushStats(String player) throws IOException {
+		return new LandRush(FuncraftAPI.getStats(player)
 				.getElementsByClass("row")
 				.get(2).getElementsByClass("col-md-4 col-sm-6")
 				.get(10));
@@ -171,8 +168,8 @@ public class FuncraftAPI {
 	 * @param player username
 	 * @return Player Statistics
 	 */
-	public Player getPlayerStats(String player) throws IOException {
-		return new Player(this.get(player)
+	public static Player getPlayerStats(String player) throws IOException {
+		return new Player(FuncraftAPI.get(player)
 				.selectFirst("html")
 				.selectFirst("body")
 				.getElementById("main-layout")
@@ -181,15 +178,15 @@ public class FuncraftAPI {
 				.getElementsByClass("player-banner clearfix").first());
 	}
 
-	private Document get(String player) throws IOException {
+	private static Document get(String player) throws IOException {
 		String baseUrl = "https://www.funcraft.net/fr/joueurs?q=";
 		String url = baseUrl + player;
 
 		return Jsoup.connect(url).get();
 	}
 
-	private Element getStats(String player) throws IOException {
-		return this.get(player).selectFirst("html")
+	private static Element getStats(String player) throws IOException {
+		return FuncraftAPI.get(player).selectFirst("html")
 				.selectFirst("body")
 				.getElementById("main-layout")
 				.getElementsByClass("container player-banner-margin-top").first()
